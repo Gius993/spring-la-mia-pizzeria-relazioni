@@ -14,7 +14,12 @@
 		<li th:text="${promo.dataFine}"></li>
 		<li th:text="${promo.titolo}"></li>
 	</ul>
-
+		<h3>Ingredienti:</h3>
+		<ul>
+			<li th:each="ing : ${pizza.ingredienti}" th:text="${ing.name}">
+				
+			</li>
+		</ul>
 	<a th:href="@{'/offerte/create?pizzaId='+${pizza.id}}">Crea Nuova offerta</a>
 </body>
 

@@ -24,7 +24,11 @@
 				</form>
 			</li>
 		</ul>
-		<a class="nav-link" th:href="@{/create}" th:classAppend="${pagina=='create'}? active : not-active"> crea pizza
+		<a class="nav-link" th:href="@{/create}" th:classAppend="${pagina=='create'}? active : not-active"> 
+			crea pizza </a>
+			<a th:href="@{/ingredienti}">
+				vai a ingredienti
+			</a>
 	</div>
 </body>
 

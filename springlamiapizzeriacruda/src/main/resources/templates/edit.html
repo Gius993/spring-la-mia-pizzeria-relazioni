@@ -23,7 +23,11 @@
 
 		<label for="price" class="form-label">pezzo</label>
 		<input type="number" min="0" max="60" class="form-control" id="price" th:field="*{price}">
-
+			<div th:each="ing : ${ingredienti}" >
+				<input type="checkbox"
+					th:value="${ing.id}" th:field="*{ingredienti}"> <label
+					th:text="${ing.name}"></label>
+			</div>
 		<button type="submit">Salva</button>
 	</form>
 	<a class="nav-link" th:href="@{/}" th:classAppend="${pagina=='pizze'}? active : not-active"> elimina

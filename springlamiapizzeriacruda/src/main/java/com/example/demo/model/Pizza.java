@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -53,6 +55,8 @@ public class Pizza {
 	@OneToMany(mappedBy = "pizza")
 	private List<Promozione> promozione;
 	
+	@ManyToMany
+	private List<Ingredienti> ingredienti;
 	
 	public int getId() {
 		return id;
@@ -99,5 +103,12 @@ public class Pizza {
 
 	public void setOfferte(List<Promozione> promozione) {
 		this.promozione = promozione;
+	}
+	
+	public List<Ingredienti> getIngredienti() {
+		return ingredienti;
+	}
+	public void setIngredienti(List<Ingredienti> ingredienti) {
+		this.ingredienti = ingredienti;
 	}
 }
