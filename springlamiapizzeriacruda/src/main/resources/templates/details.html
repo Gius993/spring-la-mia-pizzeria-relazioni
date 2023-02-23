@@ -8,8 +8,14 @@
 
 <body>
 	<h1>[[${pizza.name}]]!</h1>
+	<ul th:each="promo : ${pizza.promozione}" class="text-danger">
 
-	<a  th:href="@{/offerte/create}">Visualizza offerte</a>
+		<li th:text="${promo.dataInizio}"></li>
+		<li th:text="${promo.dataFine}"></li>
+		<li th:text="${promo.titolo}"></li>
+	</ul>
+
+	<a th:href="@{'/offerte/create?pizzaId='+${pizza.id}}">Crea Nuova offerta</a>
 </body>
 
 </html>
